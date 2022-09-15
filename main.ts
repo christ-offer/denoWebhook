@@ -15,7 +15,7 @@ const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
 }
 const client = new SmallBot({
-  accessToken: "mysecretaccesstoken",
+  accessToken: "syt_dGVzdGJvdG51bWVyb25l_QLPrwowZITZzzChegZtJ_1mweQC",
   homeserverUrl: "https://matrix.org/",
   eventHandler: async (client, roomId, event) => {
     app("/webhook", { secret: env.githubSecret })
