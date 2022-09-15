@@ -23,4 +23,7 @@ app("/webhook", { secret: env.githubSecret })
   .on("pull_request_review", (e : any) => send(pullRequestReview(e)))
   .on("push", (e : any) => {
     console.log("push", e)
+    send(e)
   })
+  
+  
