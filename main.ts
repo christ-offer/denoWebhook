@@ -21,6 +21,5 @@ app("/webhook", { secret: env.githubSecret })
     send(pullRequest(e))
   })
   // deno-lint-ignore no-explicit-any
-  .on("pull_request_review", (e : any) => send(pullRequestReview(e)));
-  
-  
+  .on("pull_request_review", (e : any) => send(pullRequestReview(e)))
+  .on("push", (e : any) => console.log('push'))
