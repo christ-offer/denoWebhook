@@ -14,6 +14,7 @@ const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
 }
 
+
 app("/webhook", { secret: env.githubSecret })
   // deno-lint-ignore no-explicit-any
   .on("pull_request", (e : any) => {
@@ -22,5 +23,7 @@ app("/webhook", { secret: env.githubSecret })
   })
   // deno-lint-ignore no-explicit-any
   .on("pull_request_review", (e : any) => send(pullRequestReview(e)))
-  .on("push", (e : any) => console.log('push', e))
+  .on("push", (e : any) => {
+    console.log("push", e)
+  })
   
