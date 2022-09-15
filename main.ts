@@ -5,7 +5,7 @@ import {
   pullRequestReview,
 } from "https://deno.land/x/ghook@0.13.0/mod.ts";
 import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
-import { serve } from "https://deno.land/std@0.145.0/http/server.ts";
+
 
 // think this is posting the pulls to this url
 const send = makeLarkSender("https://github-matrix.fly.dev");
@@ -22,5 +22,5 @@ app("/webhook", { secret: env.githubSecret })
 
 
 
-  serve((req: Request) => new Response("Hello World"));
+
   
