@@ -7,6 +7,7 @@ import {
 import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 import { serve } from "https://deno.land/std@0.145.0/http/server.ts";
 
+// think this is posting the pulls to this url
 const send = makeLarkSender("https://github-matrix.fly.dev");
 
 const env = {
