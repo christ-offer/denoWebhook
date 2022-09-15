@@ -6,8 +6,27 @@ import {
 } from "https://deno.land/x/ghook@0.13.0/mod.ts";
 import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 
+function makeLarkSender1(url: string) {
+  return (message?: string) => {
+    if (!message) return;
+
+    return fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+          elements: [
+            {
+              content: message,
+            },
+          ],
+        },
+      ),
+    });
+  };
+}
+
+
 // think this is posting the pulls to this url
-const send = makeLarkSender("https://test-bot-bot.fly.dev/hook");
+const send = makeLarkSender1("https://test-bot-bot.fly.dev/hook");
 
 const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
