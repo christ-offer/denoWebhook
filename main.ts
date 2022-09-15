@@ -8,7 +8,7 @@ import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 
 
 // think this is posting the pulls to this url
-const send = makeLarkSender("https://github-matrix.fly.dev/");
+const send = makeLarkSender("https://github-matrix.fly.dev/hook");
 
 const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
