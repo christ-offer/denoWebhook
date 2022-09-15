@@ -8,7 +8,7 @@ import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 
 
 // think this is posting the pulls to this url
-const send = makeLarkSender("https://github-matrix.fly.dev");
+const send = makeLarkSender("https://github-matrix.fly.dev/");
 
 const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
@@ -19,8 +19,3 @@ app("/webhook", { secret: env.githubSecret })
   .on("pull_request", (e : any) => send(pullRequest(e)))
   // deno-lint-ignore no-explicit-any
   .on("pull_request_review", (e : any) => send(pullRequestReview(e)));
-
-
-
-
-  
