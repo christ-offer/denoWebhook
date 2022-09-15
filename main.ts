@@ -7,7 +7,7 @@ import {
 import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 import { serve } from "https://deno.land/std@0.145.0/http/server.ts";
 
-const send = makeLarkSender("");
+const send = makeLarkSender("https://github-matrix.fly.dev");
 
 const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
