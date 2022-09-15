@@ -26,6 +26,3 @@ app("/webhook", { secret: env.githubSecret })
   .on("push", (e : any) => {
     console.log("push", e)
   })
-  
-  
-  
