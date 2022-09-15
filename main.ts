@@ -16,7 +16,7 @@ const env = {
 app("/webhook", { secret: env.githubSecret })
   // deno-lint-ignore no-explicit-any
   .on("pull_request", (e : any) => {
-    console.log('a pull-request')
+    console.log('a pull-request', e)
     send(pullRequest(e))
   })
   // deno-lint-ignore no-explicit-any
