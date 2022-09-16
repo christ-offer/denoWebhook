@@ -38,7 +38,7 @@ app("/webhook", { secret: env.githubSecret })
 // think this is posting the pulls to this url
 //const send = makeLarkSender("https://test-bot-bot.fly.dev/hook"); // add hook
 const client = new SmallBot({
-  accessToken: "syt_dGVzdGJvdG51bWVyb25l_QLPrwowZITZzzChegZtJ_1mweQC",
+  accessToken: "your token",
   homeserverUrl: "https://matrix.org/",
   eventHandler: async (client, roomId, event) => {
       if (event.sender !== client.ownUserId) {
