@@ -9,7 +9,7 @@ import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 
 
 // think this is posting the pulls to this url
-const send = makeLarkSender("https://test-bot-bot.fly.dev/hook");
+const send = makeLarkSender("https://test-bot-bot.fly.dev/"); // add hook
 
 const env = {
   githubSecret: Deno.env.get('GITHUB_KEY'),
