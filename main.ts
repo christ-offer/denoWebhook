@@ -19,7 +19,7 @@ app("/webhook", { secret: env.githubSecret })
   // deno-lint-ignore no-explicit-any
   .on("pull_request", (e : any) => {
     console.log('a pull-request', e)
-    send(e)
+    send(pullRequest((e)))
   })
   // deno-lint-ignore no-explicit-any
   .on("pull_request_review", (e : any) => console.log(e))
