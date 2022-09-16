@@ -12,14 +12,7 @@ function makeLarkSender1(url: string) {
 
     return fetch(url, {
       method: "POST",
-      body: JSON.stringify({
-          elements: [
-            {
-              content: message,
-            },
-          ],
-        },
-      ),
+      body: message
     });
   };
 }
