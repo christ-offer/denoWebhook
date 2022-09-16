@@ -28,12 +28,13 @@ const env = {
 app("/webhook", { secret: env.githubSecret })
   // deno-lint-ignore no-explicit-any
   .on("pull_request", (e : any) => {
-    console.log('a pull-request', e)
+    console.log('a pull-request', e.action)
     send(pullRequest(e))
+    send(pullRequest((e)))
   })
   // deno-lint-ignore no-explicit-any
   .on("pull_request_review", (e : any) => send(pullRequestReview(e)))
   .on("push", (e : any) => {
-    console.log("push", e)
+    console.log("push", e.ref)
     send(pullRequest(e))
   })
