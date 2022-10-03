@@ -27,6 +27,7 @@ app("/webhook", { secret: env.githubSecret })
 const client = new SmallBot({
   accessToken: "your token",
   homeserverUrl: "https://matrix.org/",
+  // This part is not needed for the functionality of the bot, but it wont run withouth some eventhandler.
   eventHandler: async (client, roomId, event) => {
       if (event.sender !== client.ownUserId) {
           const profile = await client.getUserProfile(event.sender);
